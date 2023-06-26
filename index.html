@@ -501,7 +501,7 @@
                 </div>
                 <div class="reserve_form">
                     <h2 class="title">預約賞屋</h2>
-                    <form action="">
+                    <form action="" onsubmit="sendEmail(); reset(); return false">
                         <div class="row">
                             <div class="col-12">
                                 <input class="reserve_form_input" type="text" placeholder="姓名（必填）" required id="name">
@@ -607,6 +607,7 @@
     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./public/js/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/aos/aos.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./public/js/index.js"></script>
 </body>
 </html>
