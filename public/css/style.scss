@@ -8,7 +8,7 @@ body {
     font-family: 'Noto Sans TC', sans-serif;
     color: #3E3A39;
     background-color: $secondary-500;
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 1199px) {
         padding-bottom: 60px;
     }
 }
@@ -371,14 +371,19 @@ main {
             position: absolute;
             left: 55%;
             .title {
-                margin-bottom: 10px !important;
+                margin-bottom: 7px !important;
                 letter-spacing: 0.05em;
                 white-space: nowrap;
+                width: fit-content;
+                margin-left: auto;
+                border-bottom: 1px solid rgba(105, 100, 99, 0.53);
+                padding-bottom: 5px;
             }
             .arrange_remark {
                 margin-top: 0;
-                padding-top: 5px;
-                border-top: 1px solid rgba(105, 100, 99, 0.53);
+                // padding-top: 5px;
+                width: fit-content;
+                margin-left: auto;
             }
         }
     }
@@ -728,6 +733,7 @@ main {
     background-repeat: no-repeat;
     padding-bottom: 100px;
     position: relative;
+    margin-top: -1px;
     // overflow: hidden;
     &_title {
         width: fit-content;
@@ -1173,6 +1179,8 @@ main {
     background-repeat: no-repeat;
     background-position: 0 0;
     position: relative;
+    margin-top: -1px;
+    animation: curve 3s ease-in-out infinite alternate;
     .title {
         color: #fff;
     }
@@ -1197,12 +1205,16 @@ main {
         &.toto {
             width: 30%;
             padding-top: 0.5vw;
+            .brand_ball {
+                margin-bottom: 80px;
+            }
         }
     }
     &_ball {
         width: 100px;
         display: block;
         margin: 0 auto 30px;
+        animation: ball 3s ease-in-out infinite alternate;
     }
     &_name {
         width: 100%;
@@ -1224,6 +1236,9 @@ main {
     &_curve {
         position: relative;
         margin-bottom: 70px;
+        >img {
+            animation: ball 3s ease-in-out infinite alternate;
+        }
         &_ball {
             width: 100px;
             position: absolute;
@@ -1340,6 +1355,24 @@ main {
                 }
             }
         }
+    }
+}
+
+@keyframes curve {
+    0% {
+        background-position: 0 -1vw;
+    }
+    100% {
+        background-position: 0 1vw;
+    }
+}
+
+@keyframes ball {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(10%);
     }
 }
 
@@ -1601,10 +1634,10 @@ main {
             }
         }
     }
-    @media screen and (max-width: 991px) {
-        right: 30px;
+    @media screen and (max-width: 1399px) {
+        right: 20px;
     }
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 1199px) {
         width: 100%;
         top: inherit;
         transform: none;
@@ -1613,11 +1646,11 @@ main {
         border-radius: 0;
         li {
             width: 20%;
-            border-radius: 0 !important;
         }
         a {
             width: 100%;
             height: 60px;
+            border-radius: 0 !important;
             img {
                 width: 25px;
                 margin-bottom: 1px;

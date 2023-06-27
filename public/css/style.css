@@ -5,7 +5,7 @@ body {
   background-color: #E4BECE;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1199px) {
   body {
     padding-bottom: 60px;
   }
@@ -441,15 +441,23 @@ main {
 }
 
 .arrange_pic_intro .title {
-  margin-bottom: 10px !important;
+  margin-bottom: 7px !important;
   letter-spacing: 0.05em;
   white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  border-bottom: 1px solid rgba(105, 100, 99, 0.53);
+  padding-bottom: 5px;
 }
 
 .arrange_pic_intro .arrange_remark {
   margin-top: 0;
-  padding-top: 5px;
-  border-top: 1px solid rgba(105, 100, 99, 0.53);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
 }
 
 .arrange_top {
@@ -803,6 +811,7 @@ main {
   background-repeat: no-repeat;
   padding-bottom: 100px;
   position: relative;
+  margin-top: -1px;
 }
 
 .life_title {
@@ -1318,6 +1327,9 @@ main {
   background-repeat: no-repeat;
   background-position: 0 0;
   position: relative;
+  margin-top: -1px;
+  -webkit-animation: curve 3s ease-in-out infinite alternate;
+          animation: curve 3s ease-in-out infinite alternate;
 }
 
 .brand .title {
@@ -1353,10 +1365,16 @@ main {
   padding-top: 0.5vw;
 }
 
+.brand_item.toto .brand_ball {
+  margin-bottom: 80px;
+}
+
 .brand_ball {
   width: 100px;
   display: block;
   margin: 0 auto 30px;
+  -webkit-animation: ball 3s ease-in-out infinite alternate;
+          animation: ball 3s ease-in-out infinite alternate;
 }
 
 .brand_name {
@@ -1382,6 +1400,11 @@ main {
 .brand_curve {
   position: relative;
   margin-bottom: 70px;
+}
+
+.brand_curve > img {
+  -webkit-animation: ball 3s ease-in-out infinite alternate;
+          animation: ball 3s ease-in-out infinite alternate;
 }
 
 .brand_curve_ball {
@@ -1495,6 +1518,46 @@ main {
   }
   .brand_curve.curve-2 .brand_curve_ball {
     top: 50%;
+  }
+}
+
+@-webkit-keyframes curve {
+  0% {
+    background-position: 0 -1vw;
+  }
+  100% {
+    background-position: 0 1vw;
+  }
+}
+
+@keyframes curve {
+  0% {
+    background-position: 0 -1vw;
+  }
+  100% {
+    background-position: 0 1vw;
+  }
+}
+
+@-webkit-keyframes ball {
+  0% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  100% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+
+@keyframes ball {
+  0% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+  100% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
   }
 }
 
@@ -1822,13 +1885,13 @@ main {
   opacity: 1;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1399px) {
   .sideBtn {
-    right: 30px;
+    right: 20px;
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1199px) {
   .sideBtn {
     width: 100%;
     top: inherit;
@@ -1840,11 +1903,11 @@ main {
   }
   .sideBtn li {
     width: 20%;
-    border-radius: 0 !important;
   }
   .sideBtn a {
     width: 100%;
     height: 60px;
+    border-radius: 0 !important;
   }
   .sideBtn a img {
     width: 25px;
