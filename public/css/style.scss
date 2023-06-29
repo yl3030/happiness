@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
 
 $primary-500: #5E318F;
 $secondary-500: #E4BECE;
@@ -121,11 +121,12 @@ main {
 .banner {
     background-color: #5E318F;
     padding: 13.75vw 0 15vw;
-    background-image: url(../img/head_bg.png);
-    background-size: 100%;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background-image: url(../img/banner_bg_1.png), url(../img/banner_bg_2.png);
+    background-size: 100%, 100%;
+    background-position: 0 0, 0 0;
+    background-repeat: no-repeat, no-repeat;
     position: relative;
+    animation: bannerWave 3s ease-in-out infinite alternate;
     img {
         display: block;
     }
@@ -154,7 +155,7 @@ main {
     }
     &_feature {
         width: 30.16vw;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     &_data {
         width: 30.16vw;
@@ -165,15 +166,26 @@ main {
         left: 0;
         bottom: -14vw;
         z-index: 1;
+        animation: ball 3s ease-in-out infinite alternate;
     }
     &::after {
         position: absolute;
         content: "";
         width: 60%;
-        height: 5%;
+        height: 7%;
         background-color: $secondary-500;
         bottom: 0;
         left: 0;
+        z-index: 0;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 40%;
+        height: 2%;
+        background-color: $primary-500;
+        top: 100%;
+        right: 0;
         z-index: 0;
     }
     @media screen and (max-width: 767px) {
@@ -208,6 +220,15 @@ main {
             width: 12.8vw;
             margin: 20px 0 0 0;
         }
+    }
+}
+
+@keyframes bannerWave {
+    0% {
+        background-position: 0 1vw, 0 -1vw;
+    }
+    100% {
+        background-position: 0 -1vw, 0 1vw;
     }
 }
 
@@ -1112,7 +1133,7 @@ main {
             }
         }
     }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 450px) {
         &_wave {
             width: 44vw;
             top: 6%;

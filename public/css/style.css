@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap");
 body {
   font-family: 'Noto Sans TC', sans-serif;
   color: #3E3A39;
@@ -140,11 +140,13 @@ main {
 .banner {
   background-color: #5E318F;
   padding: 13.75vw 0 15vw;
-  background-image: url(../img/head_bg.png);
-  background-size: 100%;
-  background-position: 0 0;
-  background-repeat: no-repeat;
+  background-image: url(../img/banner_bg_1.png), url(../img/banner_bg_2.png);
+  background-size: 100%, 100%;
+  background-position: 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat;
   position: relative;
+  -webkit-animation: bannerWave 3s ease-in-out infinite alternate;
+          animation: bannerWave 3s ease-in-out infinite alternate;
 }
 
 .banner img {
@@ -182,7 +184,7 @@ main {
 
 .banner_feature {
   width: 30.16vw;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .banner_data {
@@ -195,16 +197,29 @@ main {
   left: 0;
   bottom: -14vw;
   z-index: 1;
+  -webkit-animation: ball 3s ease-in-out infinite alternate;
+          animation: ball 3s ease-in-out infinite alternate;
 }
 
 .banner::after {
   position: absolute;
   content: "";
   width: 60%;
-  height: 5%;
+  height: 7%;
   background-color: #E4BECE;
   bottom: 0;
   left: 0;
+  z-index: 0;
+}
+
+.banner::before {
+  position: absolute;
+  content: "";
+  width: 40%;
+  height: 2%;
+  background-color: #5E318F;
+  top: 100%;
+  right: 0;
   z-index: 0;
 }
 
@@ -245,6 +260,24 @@ main {
   .banner_brand {
     width: 12.8vw;
     margin: 20px 0 0 0;
+  }
+}
+
+@-webkit-keyframes bannerWave {
+  0% {
+    background-position: 0 1vw, 0 -1vw;
+  }
+  100% {
+    background-position: 0 -1vw, 0 1vw;
+  }
+}
+
+@keyframes bannerWave {
+  0% {
+    background-position: 0 1vw, 0 -1vw;
+  }
+  100% {
+    background-position: 0 -1vw, 0 1vw;
   }
 }
 
@@ -1243,7 +1276,7 @@ main {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .city_wave {
     width: 44vw;
     top: 6%;
