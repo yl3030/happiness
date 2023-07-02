@@ -261,6 +261,9 @@ main {
     width: 12.8vw;
     margin: 20px 0 0 0;
   }
+  .banner::before {
+    display: none;
+  }
 }
 
 @-webkit-keyframes bannerWave {
@@ -393,12 +396,10 @@ main {
 
 @media screen and (max-width: 370px) {
   .space_bg.m-1 {
-    top: -4%;
-    right: -20%;
+    top: 8%;
   }
   .space_bg.m-2 {
-    top: 25%;
-    right: -25%;
+    top: 33%;
   }
 }
 

@@ -220,6 +220,9 @@ main {
             width: 12.8vw;
             margin: 20px 0 0 0;
         }
+        &::before {
+            display: none;
+        }
     }
 }
 
@@ -332,12 +335,13 @@ main {
         &_bg {
             &.m {
                 &-1 {
-                    top: -4%;
-                    right: -20%;
+                    top: 8%;
+                    // right: -20%;
                 }
                 &-2 {
-                    top: 25%;
-                    right: -25%;
+                    // top: 25%;
+                    // right: -25%;
+                    top: 33%;
                 }
             }
         }
