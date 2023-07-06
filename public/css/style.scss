@@ -121,12 +121,12 @@ main {
 .banner {
     background-color: #5E318F;
     padding: 13.75vw 0 15vw;
-    background-image: url(../img/banner_bg_1.png), url(../img/banner_bg_2.png);
+    // background-image: url(../img/banner_bg_1.png), url(../img/banner_bg_2.png);
     background-size: 100%, 100%;
     background-position: 0 0, 0 0;
     background-repeat: no-repeat, no-repeat;
     position: relative;
-    animation: bannerWave 3s ease-in-out infinite alternate;
+    // animation: bannerWave 3s ease-in-out infinite alternate;
     img {
         display: block;
     }
@@ -166,7 +166,13 @@ main {
         left: 0;
         bottom: -14vw;
         z-index: 1;
-        animation: ball 3s ease-in-out infinite alternate;
+        animation: bannerWave2 3s ease-in-out infinite alternate;
+        &.wave-2 {
+            width: 100%;
+            top: 0;
+            left: 0;
+            animation: bannerWave 3s ease-in-out infinite alternate;
+        }
     }
     &::after {
         position: absolute;
@@ -190,7 +196,7 @@ main {
     }
     @media screen and (max-width: 767px) {
         padding: 50vw 0 45vw;
-        background-image: url(../img/banner_wave_m-1.png);
+        // background-image: url(../img/banner_wave_m-1.png);
         display: flex;
         justify-content: center;
         &_logo {
@@ -228,10 +234,19 @@ main {
 
 @keyframes bannerWave {
     0% {
-        background-position: 0 1vw, 0 -1vw;
+        top: 0;
     }
     100% {
-        background-position: 0 -1vw, 0 1vw;
+        top: -2vw;
+    }
+}
+
+@keyframes bannerWave2 {
+    0% {
+        transform: translateY(1vw);
+    }
+    100% {
+        transform: translateY(-1vw);
     }
 }
 

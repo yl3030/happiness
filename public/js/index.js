@@ -92,7 +92,7 @@ $(".btn-top").click(function(){
 function sendEmail(){
     Email.send({
         SecureToken: "8207c7d7-4a6c-4797-870d-d16ee71023ce",
-        To : "yl301114@gmail.com",
+        To : "ryanlin9001@gmail.com, zhulixdesign@gmail.com, zhuli705098@gmail.com",
         From : "walayydesign@gmail.com",
         Subject : "昀真馥田預約賞屋",
         Body : "姓名:" + document.getElementById("name").value

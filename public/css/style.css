@@ -140,13 +140,10 @@ main {
 .banner {
   background-color: #5E318F;
   padding: 13.75vw 0 15vw;
-  background-image: url(../img/banner_bg_1.png), url(../img/banner_bg_2.png);
   background-size: 100%, 100%;
   background-position: 0 0, 0 0;
   background-repeat: no-repeat, no-repeat;
   position: relative;
-  -webkit-animation: bannerWave 3s ease-in-out infinite alternate;
-          animation: bannerWave 3s ease-in-out infinite alternate;
 }
 
 .banner img {
@@ -197,8 +194,16 @@ main {
   left: 0;
   bottom: -14vw;
   z-index: 1;
-  -webkit-animation: ball 3s ease-in-out infinite alternate;
-          animation: ball 3s ease-in-out infinite alternate;
+  -webkit-animation: bannerWave2 3s ease-in-out infinite alternate;
+          animation: bannerWave2 3s ease-in-out infinite alternate;
+}
+
+.banner_wave.wave-2 {
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-animation: bannerWave 3s ease-in-out infinite alternate;
+          animation: bannerWave 3s ease-in-out infinite alternate;
 }
 
 .banner::after {
@@ -226,7 +231,6 @@ main {
 @media screen and (max-width: 767px) {
   .banner {
     padding: 50vw 0 45vw;
-    background-image: url(../img/banner_wave_m-1.png);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -268,19 +272,41 @@ main {
 
 @-webkit-keyframes bannerWave {
   0% {
-    background-position: 0 1vw, 0 -1vw;
+    top: 0;
   }
   100% {
-    background-position: 0 -1vw, 0 1vw;
+    top: -2vw;
   }
 }
 
 @keyframes bannerWave {
   0% {
-    background-position: 0 1vw, 0 -1vw;
+    top: 0;
   }
   100% {
-    background-position: 0 -1vw, 0 1vw;
+    top: -2vw;
+  }
+}
+
+@-webkit-keyframes bannerWave2 {
+  0% {
+    -webkit-transform: translateY(1vw);
+            transform: translateY(1vw);
+  }
+  100% {
+    -webkit-transform: translateY(-1vw);
+            transform: translateY(-1vw);
+  }
+}
+
+@keyframes bannerWave2 {
+  0% {
+    -webkit-transform: translateY(1vw);
+            transform: translateY(1vw);
+  }
+  100% {
+    -webkit-transform: translateY(-1vw);
+            transform: translateY(-1vw);
   }
 }
 
